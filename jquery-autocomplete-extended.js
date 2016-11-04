@@ -38,7 +38,7 @@ $.widget('riddlemd.autocompleteExtended', $.ui.autocomplete, {
           });
 
           if($currentWidget.options.source) {
-              // If options.source is not a function still, assign it function that does customized ajax call. (We use a different response style than the default source handler expects)
+              // If options.source is not a function still, assign it function that does customized ajax call.
               if(typeof $currentWidget.options.source != 'function') {
                   var sourceUrl = $currentWidget.options.source
                   $currentWidget.options.source = function(request, response) {
@@ -48,8 +48,8 @@ $.widget('riddlemd.autocompleteExtended', $.ui.autocomplete, {
                               var items = [];
                               $.each(ajaxResponse, function(key, value) {
                                   items.push({
-                                      label : value.display_name,
-                                      value : value.id
+                                      label : value.label
+                                      value : value.value
                                   });
                               });
                               response(items);
